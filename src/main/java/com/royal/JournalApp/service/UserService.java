@@ -12,6 +12,29 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service class for managing User entities.
+ *
+ * This class provides functionality for creating, retrieving, deleting,
+ * and searching for User entities within the application. It acts as an
+ * intermediary between the controller layer and the data persistence
+ * components.
+ *
+ * Methods:
+ * - `createEntry(User user)`: Persists a new User entity in the database.
+ * - `getAll()`: Retrieves all User entities from the database.
+ * - `getEntryById(ObjectId myid)`: Fetches a User entity by its unique identifier.
+ * - `deleteEntryById(ObjectId myid)`: Deletes a User entity based on its unique identifier.
+ * - `findByUserName(String username)`: Retrieves a User entity by its username.
+ *
+ * Dependencies:
+ * - `UserRepository`: Directs interactions with the MongoDB data source.
+ *
+ * Notes:
+ * - The class is annotated with `@Service` and `@Component` to identify it
+ *   as a Spring-managed service component for dependency injection within
+ *   the application.
+ */
 @Service
 @Component
 public class UserService {

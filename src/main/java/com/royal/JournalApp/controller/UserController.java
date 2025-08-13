@@ -15,6 +15,10 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The UserController class provides RESTful APIs for managing users.
+ * It handles HTTP requests for fetching all users, creating a new user, and updating user details.
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
