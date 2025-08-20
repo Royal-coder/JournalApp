@@ -43,7 +43,7 @@ public class User {
     private String userName;
     @NonNull
     private String password;
-
+    private List<String> roles;
     @DBRef                  //This annotation use to make DB reference . in this case we are making reference of journalEntry with Users
     private List<JournalEntry> journalEntryList = new ArrayList<>();
 

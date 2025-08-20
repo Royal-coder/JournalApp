@@ -1,7 +1,9 @@
 package com.royal.JournalApp.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.royal.JournalApp.entity.User;
+import com.royal.JournalApp.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * The healthCheck class provides a simple REST endpoint for checking the health status
@@ -16,10 +18,19 @@ import org.springframework.web.bind.annotation.RestController;
  *   and operational. This endpoint can be used for basic health monitoring.
  */
 @RestController
-public class healthCheck {
+@RequestMapping("/public")
+public class PublicController {
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping(value = "/health")
     public String healthCheck(){
         return "Journal App is up and running";
+    }
+
+    @PostMapping(value = "/create-user")
+    public void createUser(@RequestBody User user) {
+        userService.createEntry(user);
     }
 }
